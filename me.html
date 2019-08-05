@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>ABOUT | ME</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="csi.min.js"></script>
+	<!-- Ondestek Kod Başlangıcı -->
+	<script
+		type="text/javascript">window.$ondestek || (window.$ondestek = function () { var e = document.createElement("script"); e.type = "text/javascript", e.src = "https://panel.ondestek.com/client/client.js?s=3c007bd5-440e-44ed-91ab-b8e422599dad", e.async = !0; var t = document.getElementsByTagName("head")[0]; t.insertBefore(e, t.firstChild) })();
+	</script>
+	<!-- Ondestek Kod Bitişi -->
+
+</head>
+
+<body>
+	<script src="js/three.min.js"></script>
+	<script src="js/tween.min.js"></script>
+	<script src="js/TrackballControls.js"></script>
+	<script src="js/CSS3DRenderer.js"></script>
+	
+	<div id="container"></div>
+
+	<div id="menu">
+		<button id="sphere"><img class="sphere_btn" src="img/sphere.gif"></button>
+		<button id="helix"><img class="helix_btn" src="img/helix.gif"></button>
+	</div>
+
+	<script>
+
+		var links = [
+			"https://twitter.com/h0lyskill", "img/8.gif", "22.7 %", "2", "1",
+			"https://github.com/deeppaz", "img/8.gif", "16.3 %", "2", "1",
+			"https://soundcloud.com/deeppaz", "img/8.gif", "8.9 %", "3", "1",
+			"mailto:deeppaz@hotmail.com", "img/8.gif", "8.3 %", "4", "1",
+			"/about/hakkimda.html", "img/8.gif", "8.0 %", "5", "1",
+			"http://deeppaz.tumblr.com", "img/8.gif", "6.6 %", "6", "1",
+			// "link","img/8.gif","6.4 %","1","2",
+			// "link/","img/8.gif","3.6 %","2","2",
+			// "link/","img/8.gif","3.6 %","3","2",
+			// "link/","img/8.gif","2.8 %","4","2",
+			// "link/","img/8.gif","2.3 %","5","2",
+			// "link/","img/8.gif","1.8 %","6","2",
+			// "link/","img/8.gif","1.5 %","1","3",
+			// "link/","img/8.gif","1.4 %","2","3",
+			// "link/","img/8.gif","1.3 %","3","3",
+			// "link/","img/8.gif","1.2 %","4","3",
+			// "link/","img/8.gif","0.8 %","5","3",
+			// "link/","img/8.gif","0.6 %","6","3",
+			// "link/","img/8.gif","0.6 %","1","4",
+			// "link/","img/8.gif","0.4 %","2","4",
+			// "link/","img/8.gif","0.3 %","3","4",
+			// "link/","img/8.gif","0.3 %","4","4",
+			// "link/","img/8.gif","0.3 %","5","4",
+			// "link/","img/8.gif","0.3 %","6","4",
+			// "link/","img/8.gif","0.3 %","1","5",
+			// "link/","img/8.gif","0.3 %","2","5",
+			// "link","img/8.gif","0.3 %","6","4",
+			// "link","img/8.gif","0.3 %","1","5",
+			// "link/","img/8.gif","0.3 %","2","5",
+		]
+		var table = [
+			"Twitter", "Twitter", "22.7 %", "1", "1",
+			"Github", "Github", "16.3 %", "2", "1",
+			"Soundcloud", "Soundcloud", "8.9 %", "3", "1",
+			"Mail", "Mail", "8.3 %", "4", "1",
+			"Me", "Me", "8.0 %", "5", "1",
+			"Tumblr", "Tumblr", "6.6 %", "6", "1",
+			// "C","C","6.4 %","1","2",
+			// "R","R","3.6 %","2","2",
+			// "Objective-C","Objective-C","3.6 %","3","2",
+			// "Swift","Swift","2.8 %","4","2",
+			// "Matlab","Matlab","2.3 %","5","2",
+			// "Ruby","Ruby","1.8 %","6","2",
+			// "VBA","VBA","1.5 %","1","3",
+			// "Visual Basic","Visual Basic","1.4 %","2","3",
+			// "TypeScript","TypeScript","1.3 %","3","3",
+			// "Scala","Scala","1.2 %","4","3",
+			// "Perl","Perl","0.8 %","5","3",
+			// "Go","Go","0.6 %","6","3",
+			// "Kotlin","Kotlin","0.6 %","1","4",
+			// "lua","lua","0.4 %","2","4",
+			// "Rust","Rust","0.3 %","3","4",
+			// "Haskell","Haskell","0.3 %","4","4",
+			// "Delphi","Delphi","0.3 %","5","4",
+			// "SQL","SQL","0.3 %","6","4",
+			// "HTML","HTML","0.3 %","1","5",
+			// "CSS","CSS","0.3 %","2","5",
+			// "Groovy","Groovy","0.3 %","3","5",
+			// "Grails","Grails","0.3 %","4","5",
+			// "MySQL","MySQL","0.3 %","5","5",
+		];
+
+		var camera, scene, renderer;
+		var controls;
+
+		var objects = [];
+		var targets = { sphere: [], helix: [] };
+
+		init();
+		animate();
+
+		function init() {
+
+			camera = new THREE.PerspectiveCamera(40, window.innerWidth / window.innerHeight, 1, 10000);
+			camera.position.z = 3000;
+
+			scene = new THREE.Scene();
+
+			//tabl
+
+			for (var i = 0; i < table.length; i += 5) {
+
+				var element = document.createElement('div');
+				element.className = 'element';
+				element.style.backgroundColor = 'rgba(0, 255, 255, 0.75' + (Math.random() * 0.5 + 0.25) + ')';
+
+				var number = document.createElement('div');
+				number.className = 'number';
+				number.textContent = (i / 5) + 1;
+				element.appendChild(number);
+
+				//8_icin_gorsel
+				var image = document.createElement('img');
+				var a = document.createElement('a');
+				a.href = links[i];
+				image.className = 'image';
+				image.src = links[i + 1];
+				image.width = 400;
+				image.height = 300;
+				element.appendChild(a).appendChild(image);
+
+				var symbol = document.createElement('div');
+				symbol.className = 'symbol';
+				symbol.textContent = table[i];
+				element.appendChild(symbol);
+
+				var details = document.createElement('div');
+				details.className = 'details';
+				details.innerHTML = table[i + 1] + '<br>' + table[i + 2];
+				element.appendChild(details);
+
+				var object = new THREE.CSS3DObject(element);
+				object.position.x = Math.random() * 4000 - 2000;
+				object.position.y = Math.random() * 4000 - 2000;
+				object.position.z = Math.random() * 4000 - 2000;
+				scene.add(object);
+
+				objects.push(object);
+
+			}
+
+			// sphere
+
+			var vector = new THREE.Vector3();
+
+			for (var i = 0, l = objects.length; i < l; i++) {
+
+				var object = objects[i];
+
+				var phi = Math.acos(-1 + (2 * i) / l);
+				var theta = Math.sqrt(l * Math.PI) * phi;
+
+				var object = new THREE.Object3D();
+
+				object.position.x = 1000 * Math.cos(theta) * Math.sin(phi);
+				object.position.y = 1000 * Math.sin(theta) * Math.sin(phi);
+				object.position.z = 1000 * Math.cos(phi);
+
+				vector.copy(object.position).multiplyScalar(2);
+
+				object.lookAt(vector);
+
+				targets.sphere.push(object);
+
+			}
+
+			// helix
+
+			var vector = new THREE.Vector3();
+			var cylindrical = new THREE.Cylindrical();
+
+			for (var i = 0, l = objects.length; i < l; i++) {
+
+				var theta = i * 0.475 + Math.PI;
+				var y = - (i * 28) + 50;
+
+				var object = new THREE.Object3D();
+
+				cylindrical.set(900, theta, y);
+
+				object.position.setFromCylindrical(cylindrical);
+
+				vector.x = object.position.x * 2;
+				vector.y = object.position.y;
+				vector.z = object.position.z * 2;
+
+				object.lookAt(vector);
+
+				targets.helix.push(object);
+
+			}
+
+			renderer = new THREE.CSS3DRenderer();
+			renderer.setSize(window.innerWidth, window.innerHeight);
+			renderer.domElement.style.position = 'absolute';
+			document.getElementById('container').appendChild(renderer.domElement);
+
+			//
+
+			controls = new THREE.TrackballControls(camera, renderer.domElement);
+			controls.rotateSpeed = 0.5;
+			controls.minDistance = 500;
+			controls.maxDistance = 6000;
+			controls.addEventListener('change', render);
+
+
+			var button = document.getElementById('sphere');
+			button.addEventListener('click', function (event) {
+
+				transform(targets.sphere, 2000);
+
+			}, false);
+
+			var button = document.getElementById('helix');
+			button.addEventListener('click', function (event) {
+
+				transform(targets.helix, 2000);
+
+			}, false);
+
+			transform(targets.sphere, 3000);
+
+			//
+
+			window.addEventListener('resize', onWindowResize, false);
+
+		}
+
+		function transform(targets, duration) {
+
+			TWEEN.removeAll();
+
+			for (var i = 0; i < objects.length; i++) {
+
+				var object = objects[i];
+				var target = targets[i];
+
+				new TWEEN.Tween(object.position)
+					.to({ x: target.position.x, y: target.position.y, z: target.position.z }, Math.random() * duration + duration)
+					.easing(TWEEN.Easing.Exponential.InOut)
+					.start();
+
+				new TWEEN.Tween(object.rotation)
+					.to({ x: target.rotation.x, y: target.rotation.y, z: target.rotation.z }, Math.random() * duration + duration)
+					.easing(TWEEN.Easing.Exponential.InOut)
+					.start();
+
+			}
+
+			new TWEEN.Tween(this)
+				.to({}, duration * 2)
+				.onUpdate(render)
+				.start();
+
+		}
+
+		function onWindowResize() {
+
+			camera.aspect = window.innerWidth / window.innerHeight;
+			camera.updateProjectionMatrix();
+
+			renderer.setSize(window.innerWidth, window.innerHeight);
+
+			render();
+
+		}
+
+		function animate() {
+
+			requestAnimationFrame(animate);
+
+			TWEEN.update();
+
+			controls.update();
+
+		}
+
+		function render() {
+
+			renderer.render(scene, camera);
+
+		}
+
+	</script>
+</body>
+
+</html>
