@@ -5,22 +5,25 @@
 	<title>ABOUT | ME</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:700,800" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Baloo+Bhaina" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="style.css">
-	<script src="Startpage.js"></script>
+	<script src="startpage.js"></script>
 	<link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 
-<body id="container">
+<body>
 	<script src="js/three.min.js"></script>
 	<script src="js/tween.min.js"></script>
 	<script src="js/TrackballControls.js"></script>
 	<script src="js/CSS3DRenderer.js"></script>
-	
+	<div class="page">
+	<div id="container"></div>
 	<div id="menu">
 		<button id="sphere"><img class="sphere_btn" src="img/sphere.gif"></button>
 		<button id="helix"><img class="helix_btn" src="img/helix.gif"></button>
 	</div>
-
 	<script>
 
 		var links = [
@@ -288,7 +291,11 @@
 		}
 
 	</script>
-
+	</div>
+	<div class="overlay">
+		<div class="spinner"></div>
+		<div class="label">Loading</div>
+	</div>
 </body>
 
 </html>

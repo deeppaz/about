@@ -1,7 +1,19 @@
-var backd = document.querySelector('#containers');
-var bodd = document.querySelector('.content');
-function preloader(){
-            backd.style.display = "none";
-            bodd.style.display = "block";
-        }
-window.onload = setTimeout(preloader,2600);
+function onReady(callback) {
+  var intervalID = window.setInterval(checkReady, 1000);
+
+  function checkReady() {
+      if (document.getElementsByTagName('body')[0] !== undefined) {
+          window.clearInterval(intervalID);
+          callback.call(this);
+      }
+  }
+}
+
+function show(id, value) {
+  document.getElementById(id).style.display = value ? 'block' : 'none';
+}
+
+onReady(function () {
+  show('page', true);
+  show('loading', false);
+});
