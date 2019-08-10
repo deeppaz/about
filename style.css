@@ -89,7 +89,7 @@ a {
 button {
   color: rgba(127, 255, 255, 0.75);
   background: transparent;
-  outline: 1px solid rgba(127, 255, 255, 0.75);
+  /* outline: 1px solid rgba(127, 255, 255, 0.75); */
   border: 0px;
   padding: 5px 10px;
   cursor: pointer;
@@ -247,7 +247,7 @@ button[type="button"] {
   padding: 15px;
   position: absolute;
   z-index: 1;
-  bottom: 300px;
+  bottom: 250px;
   left: 50%;
   display: inline-block;
   margin-right: 5px;
