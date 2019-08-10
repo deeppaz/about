@@ -120,6 +120,14 @@ button:active {
   background-color: rgba(0, 255, 255, 0.75);
 }
 
+.yonlendir{
+ color: #08bdc4;
+ font-size: 40px;
+ position: absolute;
+ top: 320px;
+ left: 900px;
+}
+
 /* start */
 @-webkit-keyframes SPINNER {
   0%   { -webkit-transform: translate(-50%,-50%) rotate(0deg); }
@@ -277,8 +285,9 @@ button:hover {
 
 /* Customize */
 .overlay {
-  background: #000;
+  background-image: url(img/nackground.gif)
 }
+
 .overlay .spinner,
 .overlay .spinner:before,
 .overlay .spinner:after {
