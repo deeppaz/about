@@ -9,8 +9,6 @@
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:700,800" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Baloo+Bhaina" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="style.css">
-	<script src="startpage.js"></script>
-	<link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 
 <body>
@@ -18,7 +16,7 @@
 	<script src="js/tween.min.js"></script>
 	<script src="js/TrackballControls.js"></script>
 	<script src="js/CSS3DRenderer.js"></script>
-	<div class="page">
+
 		<div id="container"></div>
 		<div id="menu">
 			<button id="sphere"><img class="sphere_btn" src="img/sphere.gif"></button>
@@ -291,11 +289,18 @@
 			}
 
 		</script>
-	</div>
+	<div id="imgbox1">
 	<div class="overlay">
 		<div class="spinner"></div>
-		<div class="label">Loading</div>
+		<div class="label">Start</div>
+		<button type="button" onclick="removeElement()">Start</button>
 	</div>
+	</div>
+	<script>
+		function removeElement() {
+			document.getElementById("imgbox1").style.display = "none";
+		}
+	</script>
 </body>
 
 </html>
