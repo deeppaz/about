@@ -583,7 +583,7 @@
     prevBtn: 'Geri',
     doneBtn: 'Bitti',
     skipBtn: 'Geç',
-    closeTooltip: 'Kapat'
+    closeTooltip: '×'
   };
 
   customI18N = {}; // Developer's custom i18n strings goes here.

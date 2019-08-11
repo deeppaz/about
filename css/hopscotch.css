@@ -406,24 +406,23 @@
     appearance: none;
     border: 0;
     color: #000;
-    background: transparent url(../img/sprite-green.png) -192px -92px no-repeat;
     background-color: skyblue;
     display: block;
-    padding: 8px;
     position: absolute;
     text-decoration: none;
-    text-indent: -9999px;
+    text-indent: 2px;
     width: 8px;
     height: 8px;
     top: 0;
     right: 0;
+    border-radius: 5px 1px 5px 11px
   }
   div.hopscotch-bubble .hopscotch-bubble-close.hide,
   div.hopscotch-bubble .hopscotch-bubble-close.hide-all {
     display: none;
   }
   div.hopscotch-bubble .hopscotch-bubble-number {
-    background: transparent url(../img/sprite-green.png) 0 0 no-repeat;
+    background: transparent url(../img/sprite.png) 0 0 no-repeat;
     color: #fff;
     display: block;
     float: left;
