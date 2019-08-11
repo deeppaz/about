@@ -16,17 +16,18 @@ var baslangic = {
             placement: "bottom"
         },
         {
-            title: "Sphere görünüşü",
-            content: "Sphere efekti için görüntüye tıkla.",
-            target: "gorsel_a",
-            placement: "right"
-        },
-        {
             title: "Helix görüşünü",
             content: "Helix efekti için görüntüye tıkla.",
             target: "gorsel_b",
             placement: "left"
+        },
+        {
+            title: "Sphere görünüşü",
+            content: "Sphere efekti için görüntüye tıkla.",
+            target: "gorsel_a",
+            placement: "right"
         }
+
     ]
 };
 
