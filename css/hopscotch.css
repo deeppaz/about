@@ -283,11 +283,11 @@
     text-shadow: 0 1px 1px rgba(0, 0, 0, 0.35);
     background-color: #287bbc;
     filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#287bbc', endColorstr='#23639a');
-    background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #287bbc), color-stop(100%, #23639a));
-    background-image: -webkit-linear-gradient(to bottom, #287bbc 0%, #23639a 100%);
-    background-image: -moz-linear-gradient(to bottom, #287bbc 0%, #23639a 100%);
-    background-image: -o-linear-gradient(to bottom, #287bbc 0%, #23639a 100%);
-    background-image: linear-gradient(to bottom, #287bbc 0%, #23639a 100%);
+    background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #00d9e0), color-stop(100%, #bb11ca));
+    background-image: -webkit-linear-gradient(to bottom, #00d9e0 0%, #bb11ca 100%);
+    background-image: -moz-linear-gradient(to bottom, #00d9e0 0%, #bb11ca 100%);
+    background-image: -o-linear-gradient(to bottom, #00d9e0 0%, #bb11ca 100%);
+    background-image: linear-gradient(to bottom, #00d9e0 0%, #bb11ca 100%);
   }
   div.hopscotch-bubble .hopscotch-nav-button.next:hover {
     background-color: #2672ae;
@@ -380,6 +380,8 @@
     padding: 0;
   }
   div.hopscotch-bubble .hopscotch-bubble-container {
+    width: 174px;
+    padding: 15px;
     background-color: rgba(16, 230, 194, 0.705);
     padding: 15px;
     position: relative;

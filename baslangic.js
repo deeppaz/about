@@ -7,25 +7,19 @@ var baslangic = {
             title: "Baslangic",
             content: "Içeri girmek için tıkla",
             target: "start_btn",
-            placement: "right"
-        },
-        {
-            title: "Oynat",
-            content: "Mouse sol tık(LMB) ve sağ & sol yap.",
-            target: "yonlen",
             placement: "bottom"
         },
         {
             title: "Helix görüşünü",
             content: "Helix efekti için görüntüye tıkla.",
             target: "gorsel_b",
-            placement: "left"
+            placement: "top"
         },
         {
             title: "Sphere görünüşü",
             content: "Sphere efekti için görüntüye tıkla.",
             target: "gorsel_a",
-            placement: "right"
+            placement: "top"
         }
 
     ]

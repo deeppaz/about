@@ -2453,7 +2453,7 @@ var buttons = data.buttons;
 var step = data.step;
 var tour = data.tour;
 ;
-__p += '\n<div class="hopscotch-bubble-container" style="width: ' +
+__p += '\n<div class="hopscotch-bubble-container" style="width: auto ' +
 ((__t = ( step.width )) == null ? '' : __t) +
 'px; padding: ' +
 ((__t = ( step.padding )) == null ? '' : __t) +
