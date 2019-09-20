@@ -118,11 +118,12 @@
 				number.className = 'number';
 				number.textContent = (i / 5) + 1;
 				element.appendChild(number);
-
+				
 				//8_icin_gorsel
 				var image = document.createElement('img');
 				var a = document.createElement('a');
 				a.href = links[i];
+				a.target = "_blank";
 				image.className = 'image';
 				image.src = links[i + 1];
 				image.width = 400;
@@ -303,7 +304,6 @@
 			<button class="label" id="start_btn" type="button" onclick="removeElement()">Start</button>
 		</div>
 	</div>
-	<p>TEST</p>
 	<script>
 		function removeElement() {
 			document.getElementById("imgbox1").style.display = "none";
