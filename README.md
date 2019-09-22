@@ -4,4 +4,4 @@
 https://deeppaz.github.io/about/me
 # about
 
-![i]https://ibb.co/b5vdKdH
+![1](https://ibb.co/b5vdKdH)
