@@ -1,6 +1,6 @@
 # about | me
 
-link:
+click link:
 https://deeppaz.github.io/about/me
 
 *Preview
